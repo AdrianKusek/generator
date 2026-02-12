@@ -1,26 +1,4 @@
-﻿:root {
-  --bg: #f2efe8;
-  --panel: #fff8ea;
-  --accent: #0058a3;
-  --accent-2: #ffdb4d;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --card: #ffffff;
-  --danger: #b91c1c;
-  --border: #e5e1d8;
-  --shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  --font: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: var(--font);
-  color: var(--text);
-  background: radial-gradient(circle at top, #fff9e9 0%, #f5f0e5 35%, #ece7db 100%);
+﻿.app {
   min-height: 100vh;
 }
 
@@ -197,6 +175,11 @@ body {
   color: #0369a1;
 }
 
+.badge--packs {
+  background: #ede9fe;
+  color: #6b21a8;
+}
+
 .badge--total {
   background: #fef3c7;
   color: #92400e;
@@ -225,10 +208,6 @@ body {
   .wrap {
     grid-template-columns: 1fr 1fr;
     align-items: start;
-  }
-
-  .cards {
-    grid-column: span 1;
   }
 }
 

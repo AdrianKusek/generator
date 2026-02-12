@@ -1,72 +1,20 @@
 ﻿<!doctype html>
 <html lang="pl">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IKEA Barcode Generator</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="https://unpkg.com/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
-    <script defer src="app.js"></script>
   </head>
   <body>
-    <header class="topbar">
-      <div class="brand">
-        <span class="brand__title">IKEA Barcode Generator</span>
-        <span class="brand__subtitle">Prosty parser koszyka + kody kreskowe</span>
-      </div>
-      <div class="stats" id="stats">Znalezione: 0 | Unikalne: 0</div>
-    </header>
-
-    <main class="wrap">
-      <section class="panel">
-        <label class="label" for="rawInput">Wklej listę</label>
-        <textarea
-          id="rawInput"
-          class="textarea"
-          placeholder="Wklej surowy tekst z koszyka IKEA..."
-          rows="10"
-        ></textarea>
-
-        <div class="controls">
-          <button class="btn" id="pasteBtn">Wklej ze schowka</button>
-          <button class="btn" id="parseBtn">Przetwórz</button>
-          <button class="btn" id="clearBtn">Wyczyść</button>
-          <label class="toggle">
-            <input type="checkbox" id="sortToggle" />
-            <span>Sortuj alfabetycznie</span>
-          </label>
-          <button class="btn btn--ghost" id="printBtn">Drukuj A4</button>
-        </div>
-
-        <div class="hint">
-          Parser ignoruje nagłówki, wyciąga indeksy w formacie ###.###.##, szacuje opis i ilości.
-        </div>
-      </section>
-
-      <section class="cards" id="cards"></section>
-    </main>
-
-    <template id="cardTemplate">
-      <article class="card">
-        <div class="card__header">
-          <div>
-            <div class="card__index"></div>
-            <div class="card__desc"></div>
-          </div>
-          <div class="card__meta">
-            <span class="badge badge--qty"></span>
-            <span class="badge badge--total"></span>
-          </div>
-        </div>
-        <div class="card__barcode">
-          <svg class="barcode"></svg>
-        </div>
-        <div class="card__actions">
-          <button class="btn btn--small copy-index">Kopiuj indeks</button>
-          <button class="btn btn--small copy-plain">Kopiuj bez kropek</button>
-          <button class="btn btn--small btn--danger remove">Usuń</button>
-        </div>
-      </article>
-    </template>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
